@@ -1,4 +1,4 @@
-import BigHeader from "../../../components/headers/BigHeader"
+import BigHeader from "@/components/headers/BigHeader"
 import KyotoHeroSection from "./HeroSection";
 import KyotoFeatureSection from "./FeatureSection";
 

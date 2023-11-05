@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import './KyotoHeroSection.css';
 
-import heroImage1 from '../../../../assets/images/kyoto/heroImage1.jpg';
-import heroImage2 from '../../../../assets/images/kyoto/heroImage2.jpg';
-import heroImage3 from '../../../../assets/images/kyoto/heroImage3.jpg';
+import heroImage1 from '@/assets/images/kyoto/heroImage1.jpg';
+import heroImage2 from '@/assets/images/kyoto/heroImage2.jpg';
+import heroImage3 from '@/assets/images/kyoto/heroImage3.jpg';
+
+import './KyotoHeroSection.css';
 
 
 const KyotoHeroSection: React.FC = () => {

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-import ButtonPrimary from '../../buttons/ButtonPrimary';
+import ButtonPrimary from '@/components/buttons/ButtonPrimary';
 
 import './BigHeader.css';
 

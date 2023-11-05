@@ -2,11 +2,11 @@ import { motion, Variants } from 'framer-motion';
 import { InViewHookResponse, useInView } from 'react-intersection-observer';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
+import ButtonPrimary from '@/components/buttons/ButtonPrimary';
+import featureImage1 from '@/assets/images/kyoto/featureImage1.jpg';
+
 import './KyotoFeatureSection.css';
 
-import ButtonPrimary from '../../../../components/buttons/ButtonPrimary';
-
-import featureImage1 from '../../../../assets/images/kyoto/featureImage1.jpg';
 
 interface VariantDefinition extends Variants {
     hidden: { opacity: number; x?: number };
