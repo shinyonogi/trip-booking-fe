@@ -1,0 +1,114 @@
+.big-header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Antic Didone', serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.big-header__hamburger {
+    position: relative;
+    left: 8em;
+
+    background-color: transparent;
+    border: none;
+}
+
+.big-header__hamburger:hover {
+    cursor: pointer;
+}
+
+.big-header__logo {
+    position: relative;
+    right: -5.3em;
+    top: 1.1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.big-header__logo h1 {
+    margin: 0;
+    font-size: 1.9em;
+}
+
+.big-header__logo p {
+    margin-top: 0.6em;
+    font-weight: 700;
+}
+
+.big-header--scrolled {
+    background-color: #fff;
+    border-bottom: solid 1px grey;
+    color: #000;
+}
+
+.big-header--scrolled .big-header__hamburger,
+.big-header--scrolled .big-header__logo h1,
+.big-header--scrolled .big-header__logo p {
+    color: #000;
+}
+
+
+@media (min-width: 1024px) {
+    .header {
+        max-height: 12vh;
+        padding: 20px 100px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .header {
+        max-height: 10vh;
+        padding: 10px 50px;
+    }
+
+    .button--hamburger {
+        right: -2em;
+    }
+
+    .header__button--book-wrapper {
+        right: -2em;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .header__logo--company {
+        font-size: 1.4em;
+    }
+
+    .header {
+        padding: 10px 20px;
+        justify-content: center;
+    }
+
+    .button--hamburger {
+        left: 0em;
+    }
+
+    .header__button--book-wrapper {
+        display: none;
+    }
+
+    .header__logo {
+        position: relative;
+        top: 0em;
+        left: -5.5em;
+    }
+
+    .header__logo--madein {
+        font-size: 0.8em;
+    }
+}
+
+
