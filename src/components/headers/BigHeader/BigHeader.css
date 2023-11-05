@@ -12,7 +12,7 @@
     padding: 20px 30px;
 
     background-color: transparent;
-    color: #fff;
+    color: var(--white);
     font-family: 'Antic Didone', serif;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
@@ -58,9 +58,9 @@
 }
 
 .big-header--scrolled {
-    background-color: #fff;
+    background-color: var(--white);
     border-bottom: solid 1px grey;
-    color: #000;
+    color: var(--black);
 }
 
 .big-header--scrolled .big-header__hamburger,

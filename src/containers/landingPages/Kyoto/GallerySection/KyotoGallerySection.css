@@ -1,0 +1,26 @@
+.kyoto-gallery {
+    height: 176vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--white);
+    color: var(--black);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.kyoto-gallery__title {
+    margin-top: 2em;
+    margin-bottom: 0.4em;
+
+    font-size: 3em;
+    font-family: var(--font-main-english);
+}
+
+.kyoto-gallery--scrolled {
+    background-color: var(--black);
+    color: var(--white);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
