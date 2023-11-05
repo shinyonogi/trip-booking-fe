@@ -27,14 +27,18 @@ const BigHeader: React.FC = () => {
     return (
         <>
             <header className={`big-header ${isScrolled ? 'big-header--scrolled' : ''}`}>
-                <button className='big-header__hamburger' type='button'>
-                    <FontAwesomeIcon icon={faBars} size='lg'/>
-                </button>
+                <div className='big-header--hamburger__wrapper'>
+                    <button className='big-header__hamburger' type='button'>
+                        <FontAwesomeIcon icon={faBars} size='lg'/>
+                    </button>
+                </div>
                 <div className='big-header__logo'>
                     <h1>Explore Japan</h1>
                     <p>Made in Kyoto</p>
                 </div>
-                <ButtonPrimary label='BOOK NOW' onClick={() => navigate('/')}/>
+                <div className='big-header--book-button__wrapper'>
+                    <ButtonPrimary label='BOOK NOW' onClick={() => navigate('/')}/>
+                </div>
             </header>
         </>
     );

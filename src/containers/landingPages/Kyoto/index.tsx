@@ -1,11 +1,13 @@
 import BigHeader from "../../../components/headers/BigHeader"
-import HeroSection from "./HeroSection";
+import KyotoHeroSection from "./HeroSection";
+import KyotoFeatureSection from "./FeatureSection";
 
 const Kyoto: React.FC = () => {
     return (
         <>
             <BigHeader />
-            <HeroSection />
+            <KyotoHeroSection />
+            <KyotoFeatureSection />
         </>
     );
 };

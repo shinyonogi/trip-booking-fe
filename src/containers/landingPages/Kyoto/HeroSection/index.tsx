@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import './HeroSection.css';
+import './KyotoHeroSection.css';
 
 import heroImage1 from '../../../../assets/images/kyoto/heroImage1.jpg';
 import heroImage2 from '../../../../assets/images/kyoto/heroImage2.jpg';
 import heroImage3 from '../../../../assets/images/kyoto/heroImage3.jpg';
 
 
-const HeroSection: React.FC = () => {
+const KyotoHeroSection: React.FC = () => {
   const [imageIndex, setImageIndex] = useState<number>(0);
   const images: string[] = [heroImage1, heroImage2, heroImage3];
 
@@ -19,22 +19,22 @@ const HeroSection: React.FC = () => {
   }, [images.length]);
 
   return (
-    <section className='hero'>
+    <section className='kyoto-hero'>
       {images.map((img, idx) => (
         <div
           key={idx}
-          className={`hero__image ${imageIndex === idx ? 'hero__image--visible' : ''}`}
+          className={`kyoto-hero__image ${imageIndex === idx ? 'kyoto-hero__image--visible' : ''}`}
           style={{ backgroundImage: `url(${img})` }}
         ></div>
       ))}
 
-      <div className='hero__title-container'>
-        <h1 className='hero__title hero__title--japanese'>京都</h1>
-        <h2 className='hero__title hero__title--english'>- Kyoto -</h2>
+      <div className='kyoto-hero__title-container'>
+        <h1 className='kyoto-hero__title kyoto-hero__title--japanese'>京都</h1>
+        <h2 className='kyoto-hero__title kyoto-hero__title--english'>- Kyoto -</h2>
       </div>
-      <h1 className='hero__scroll-indicator'>↓</h1>
+      <h1 className='kyoto-hero__scroll-indicator'>↓</h1>
     </section>
   );
 };
 
-export default HeroSection;
+export default KyotoHeroSection;

@@ -1,4 +1,4 @@
-.hero {
+.kyoto-hero {
     height: 100vh;
     width: 100vw;
     position: relative;
@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-.hero__image {
+.kyoto-hero__image {
     position: absolute;
     inset: 0;
     z-index: -1;
@@ -17,31 +17,31 @@
     opacity: 0;
 }
 
-.hero__image--visible {
+.kyoto-hero__image--visible {
     opacity: 1;
 }
 
-.hero__title-container {
+.kyoto-hero__title-container {
     text-align: center;
     color: var(--white);
 }
 
-.hero__title {
+.kyoto-hero__title {
     margin-bottom: 0.4em;
     font-family: var(--font-japanese);
 }
 
-.hero__title--japanese {
+.kyoto-hero__title--japanese {
     font-size: 6em;
 }
 
-.hero__title--english {
+.kyoto-hero__title--english {
     margin-top: 0;
     font-size: 3em;
     font-family: var(--font-main-english);
 }
 
-.hero__scroll-indicator {
+.kyoto-hero__scroll-indicator {
     position: absolute;
     bottom: 0;
     font-size: 4em;

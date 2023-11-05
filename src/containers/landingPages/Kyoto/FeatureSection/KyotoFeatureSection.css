@@ -1,0 +1,56 @@
+.kyoto-feature {
+    position: relative;
+    height: 88vh;
+    width: 100vw;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.kyoto-feature__left {
+    height: 100%;
+    width: 50%;
+}
+
+.kyoto-feature__left-img {
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.kyoto-feature__right {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kyoto-feature__right-title {
+    width: 85%;
+
+    margin-bottom: 0.4em;
+
+    font-size: 3em;
+    font-family: var(--font-main-english);
+}
+
+.kyoto-feature__right-description {
+    width: 85%;
+
+    margin-bottom: 2.5em;
+
+    font-size: 1em;
+    text-align: justify;
+}
+
+.kyoto_feature__right--button__wrapper {
+    width: 60%;
+}
+
