@@ -64,7 +64,7 @@
     border-bottom: solid 1px var(--black);
     color: var(--black);
 
-    transition: height 1s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, height 1s ease;
 }
 
 .big-header--scrolled-once .big-header__hamburger,
@@ -89,7 +89,7 @@
     height: 12vh;
     background-color: var(--white);
     color: var(--black);
-    transition: color 0.5s ease, background-color 0.5s ease, height 1s ease;
+    transition: color 1s ease, background-color 1s ease, height 1s ease;
 
     border-bottom: solid 1px var(--black);
 }

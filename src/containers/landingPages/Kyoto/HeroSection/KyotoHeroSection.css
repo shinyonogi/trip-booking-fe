@@ -43,10 +43,25 @@
 
 .kyoto-hero__scroll-indicator {
     position: absolute;
-    bottom: 0;
+    bottom: 0.5em;
     font-size: 4em;
     color: var(--white);
+
+    transition: color 1s ease, bottom 1s ease;
 }
+
+.kyoto-hero__scroll-indicator--scrolled {
+    color: transparent;
+
+    transition: color 1s ease;
+}
+
+.kyoto-hero__scroll-indicator--bouncing {
+    bottom: 0.7em;
+
+    transition: bottom 1s ease, color 1s ease;
+}
+
 
 @media (max-width: 425px) {
     .hero__title--japanese {

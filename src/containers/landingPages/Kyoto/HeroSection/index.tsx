@@ -11,6 +11,30 @@ const KyotoHeroSection: React.FC = () => {
   const [imageIndex, setImageIndex] = useState<number>(0);
   const images: string[] = [heroImage1, heroImage2, heroImage3];
 
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const [scrollIndicatorBounce, setScrollIndicatorBounce] = useState<boolean>(false);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setScrollIndicatorBounce((prev) => !prev);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+        const offset: number = window.scrollY;
+        const windowHeight: number = window.innerHeight;
+        setIsScrolled(offset > windowHeight * 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => { window.removeEventListener('scroll', handleScroll);
+  }}, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -33,7 +57,13 @@ const KyotoHeroSection: React.FC = () => {
         <h1 className='kyoto-hero__title kyoto-hero__title--japanese'>京都</h1>
         <h2 className='kyoto-hero__title kyoto-hero__title--english'>- Kyoto -</h2>
       </div>
-      <h1 className='kyoto-hero__scroll-indicator'>↓</h1>
+      <h1 className={
+        `kyoto-hero__scroll-indicator
+        ${scrollIndicatorBounce ? 'kyoto-hero__scroll-indicator--bouncing': ''}
+        ${isScrolled ? 'kyoto-hero__scroll-indicator--scrolled' : ''}`
+        }>
+          ↓
+        </h1>
     </section>
   );
 };
