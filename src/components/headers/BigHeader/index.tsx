@@ -9,17 +9,17 @@ import './BigHeader.css';
 
 const BigHeader: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();
-    const [isScrolledOnce, setIsScrolledOnce] = useState<boolean>(false);
-    const [isScrolledTwice, setIsScrolledTwice] = useState<boolean>(false);
+    const [expandHeader, setExpandHeader] = useState<boolean>(false);
+    const [shrinkHeader, setShrinkHeader] = useState<boolean>(false);
     const [reachedGallery, setReachedGallery] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const offset: number = window.scrollY;
             const windowHeight: number = window.innerHeight;
-            setIsScrolledOnce(offset > windowHeight * 0 && offset < windowHeight * 0.6);
-            setIsScrolledTwice(offset > windowHeight * 0.6 && offset < windowHeight * 1.1);
-            setReachedGallery(offset > windowHeight * 1.1);
+            setExpandHeader(offset > windowHeight * 0 && offset < windowHeight * 0.6);
+            setShrinkHeader((offset > windowHeight * 0.6 && offset < windowHeight * 1.1) || offset > windowHeight * 4);
+            setReachedGallery(offset > windowHeight * 1.1 && offset < windowHeight * 4);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -32,8 +32,8 @@ const BigHeader: React.FC = () => {
         <>
             <header className={
                 `big-header
-                ${isScrolledOnce ? 'big-header--scrolled-once' : ''}
-                ${isScrolledTwice ? 'big-header--scrolled-twice' : ''}
+                ${expandHeader ? 'big-header--scrolled-once' : ''}
+                ${shrinkHeader ? 'big-header--scrolled-twice' : ''}
                 ${reachedGallery ? 'big-header--reached-gallery' : ''}
                 `
                 }
