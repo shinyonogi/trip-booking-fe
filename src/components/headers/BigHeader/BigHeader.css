@@ -14,7 +14,7 @@
     background-color: transparent;
     color: var(--white);
     font-family: 'Antic Didone', serif;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, height 1s ease;
 }
 
 .big-header--hamburger__wrapper {
@@ -57,25 +57,48 @@
     width: 15%;
 }
 
-.big-header--scrolled {
+.big-header--scrolled-once {
+    height: 18vh;
+
     background-color: var(--white);
-    border-bottom: solid 1px grey;
+    border-bottom: solid 1px var(--black);
     color: var(--black);
+
+    transition: height 1s ease;
 }
 
-.big-header--scrolled .big-header__hamburger,
+.big-header--scrolled-once .big-header__hamburger,
 .big-header--scrolled .big-header__logo h1,
 .big-header--scrolled .big-header__logo p {
     color: var(--black);
 }
 
-.big-header--scrolled .button-primary__wrapper {
+.big-header--scrolled-once .button-primary__wrapper {
     background-color: var(--beige);
   }
 
-.big-header--scrolled .button-primary {
+.big-header--scrolled-once .button-primary {
     background-color: var(--beige);
     color: var(--white);
 }
+
+.big-header--scrolled-twice {
+    height: 12vh;
+    background-color: var(--white);
+    color: var(--black);
+    transition: color 0.5s ease, background-color 0.5s ease, height 1s ease;
+
+    border-bottom: solid 1px var(--black);
+}
+
+.big-header--scrolled-twice .button-primary__wrapper {
+    background-color: var(--beige);
+}
+
+.big-header--scrolled-twice .button-primary {
+    background-color: var(--beige);
+    color: var(--white);
+}
+
 
 

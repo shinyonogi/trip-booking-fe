@@ -9,13 +9,15 @@ import './BigHeader.css';
 
 const BigHeader: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();
-    const [isScrolled, setIsScrolled] = useState<boolean>(false);
+    const [isScrolledOnce, setIsScrolledOnce] = useState<boolean>(false);
+    const [isScrolledTwice, setIsScrolledTwice] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const offset: number = window.scrollY;
             const windowHeight: number = window.innerHeight;
-            setIsScrolled(offset > windowHeight * 0.20 && (offset < windowHeight * 2.0 || offset > windowHeight * 4.0));
+            setIsScrolledOnce(offset > windowHeight * 0 && offset < windowHeight * 0.6);  /*|| offset > windowHeight * 4.0)); */
+            setIsScrolledTwice(offset > windowHeight * 0.6);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -26,7 +28,7 @@ const BigHeader: React.FC = () => {
 
     return (
         <>
-            <header className={`big-header ${isScrolled ? 'big-header--scrolled' : ''}`}>
+            <header className={`big-header ${isScrolledOnce ? 'big-header--scrolled-once' : ''} ${isScrolledTwice ? 'big-header--scrolled-twice' : ''}`}>
                 <div className='big-header--hamburger__wrapper'>
                     <button className='big-header__hamburger' type='button'>
                         <FontAwesomeIcon icon={faBars} size='lg'/>
