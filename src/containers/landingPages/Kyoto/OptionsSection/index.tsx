@@ -35,7 +35,7 @@ const KyotoOptionsSection: React.FC = () => {
           y: 0,
           transition: {
             opacity: {duration: 1},
-            y: {duration: 1}
+            y: {duration: 0.5}
           }
         }
     };

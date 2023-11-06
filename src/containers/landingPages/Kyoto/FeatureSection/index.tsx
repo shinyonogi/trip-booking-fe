@@ -1,11 +1,11 @@
 import { motion, Variants } from 'framer-motion';
 import { InViewHookResponse, useInView } from 'react-intersection-observer';
-import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 import ButtonPrimary from '@/components/buttons/ButtonPrimary';
 import featureImage1 from '@/assets/images/kyoto/featureImage1.jpg';
 
 import './KyotoFeatureSection.css';
+import { useCallback } from 'react';
 
 
 interface VariantDefinition extends Variants {
@@ -21,8 +21,6 @@ interface VariantDefinition extends Variants {
 }
 
 const KyotoFeatureSection: React.FC = () => {
-    const navigate: NavigateFunction = useNavigate();
-
     const [refLeft, inViewLeft]: InViewHookResponse = useInView({
         threshold: 0.1,
         triggerOnce: false
@@ -55,6 +53,32 @@ const KyotoFeatureSection: React.FC = () => {
         }
     };
 
+    const smoothScrollBy = useCallback((height: number, duration: number) => {
+        const start = window.pageYOffset;
+        const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+        const animateScroll = () => {
+          const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+          const timeFraction = Math.min(1, (now - startTime) / duration);
+          const easeInOutQuad = timeFraction < 0.5
+            ? 2 * timeFraction * timeFraction
+            : -1 + (4 - 2 * timeFraction) * timeFraction;
+          const scrollY = start + height * easeInOutQuad;
+
+          window.scrollTo(0, scrollY);
+
+          if (timeFraction < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        };
+
+        requestAnimationFrame(animateScroll);
+      }, []);
+
+    const scrollByFourWindowHeights = () => {
+    smoothScrollBy(window.innerHeight * 4.0, 2000);
+    };
+
     return (
         <>
             <section className='kyoto-feature'>
@@ -82,7 +106,7 @@ const KyotoFeatureSection: React.FC = () => {
                         <h2 className='kyoto-feature__right-title'>"A City with Timeless Elegance"</h2>
                         <p className='kyoto-feature__right-description'>Kyoto, a former capital with over a millennium of heritage, embodies Japan's deep-rooted traditions and history. Blending ancient temples with modern rhythms and scenic geisha districts, it offers a captivating voyage through time.</p>
                         <div className='kyoto_feature__right--button__wrapper'>
-                            <ButtonPrimary label='DISCOVER OPTIONS' onClick={() => navigate('/')}/>
+                            <ButtonPrimary label='DISCOVER OPTIONS' onClick={scrollByFourWindowHeights}/>
                         </div>
                     </div>
                 </motion.div>
