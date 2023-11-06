@@ -19,7 +19,7 @@
 }
 
 .kyoto-options__container {
-    height: 85%;
+    height: calc(85% - 2em);
     width: 100%;
 
     display: flex;

@@ -29,12 +29,12 @@ interface VariantDefinition extends Variants {
 }
 
 const KyotoGallery: React.FC = () => {
-    const [refSection, inViewSection] = useInView({
+    const [refSection, inViewSection]: InViewHookResponse = useInView({
         threshold: 0.05,
         triggerOnce: false
     });
 
-    const [refVideo, inViewVideo] = useInView({
+    const [refVideo, inViewVideo]: InViewHookResponse = useInView({
         threshold: 0.1,
         triggerOnce: false
     });
