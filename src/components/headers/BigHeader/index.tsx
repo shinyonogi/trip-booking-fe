@@ -11,13 +11,15 @@ const BigHeader: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();
     const [isScrolledOnce, setIsScrolledOnce] = useState<boolean>(false);
     const [isScrolledTwice, setIsScrolledTwice] = useState<boolean>(false);
+    const [reachedGallery, setReachedGallery] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const offset: number = window.scrollY;
             const windowHeight: number = window.innerHeight;
             setIsScrolledOnce(offset > windowHeight * 0 && offset < windowHeight * 0.6);
-            setIsScrolledTwice(offset > windowHeight * 0.6 && offset < windowHeight * 2);
+            setIsScrolledTwice(offset > windowHeight * 0.6 && offset < windowHeight * 1.1);
+            setReachedGallery(offset > windowHeight * 1.1);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -28,7 +30,14 @@ const BigHeader: React.FC = () => {
 
     return (
         <>
-            <header className={`big-header ${isScrolledOnce ? 'big-header--scrolled-once' : ''} ${isScrolledTwice ? 'big-header--scrolled-twice' : ''}`}>
+            <header className={
+                `big-header
+                ${isScrolledOnce ? 'big-header--scrolled-once' : ''}
+                ${isScrolledTwice ? 'big-header--scrolled-twice' : ''}
+                ${reachedGallery ? 'big-header--reached-gallery' : ''}
+                `
+                }
+            >
                 <div className='big-header--hamburger__wrapper'>
                     <button className='big-header__hamburger' type='button'>
                         <FontAwesomeIcon icon={faBars} size='lg'/>

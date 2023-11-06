@@ -78,10 +78,12 @@ const KyotoFeatureSection: React.FC = () => {
                     animate={inViewRight ? "visible" : "hidden"}
                     variants={variantsRight}
                 >
-                    <h2 className='kyoto-feature__right-title'>A City with Timeless Elegance</h2>
-                    <p className='kyoto-feature__right-description'>Kyoto, a former capital with over a millennium of heritage, embodies Japan's deep-rooted traditions and history. Blending ancient temples with modern rhythms and scenic geisha districts, it offers a captivating voyage through time.</p>
-                    <div className='kyoto_feature__right--button__wrapper'>
-                        <ButtonPrimary label='DISCOVER OPTIONS' onClick={() => navigate('/')}/>
+                    <div className='kyoto-feature__right__content'>
+                        <h2 className='kyoto-feature__right-title'>"A City with Timeless Elegance"</h2>
+                        <p className='kyoto-feature__right-description'>Kyoto, a former capital with over a millennium of heritage, embodies Japan's deep-rooted traditions and history. Blending ancient temples with modern rhythms and scenic geisha districts, it offers a captivating voyage through time.</p>
+                        <div className='kyoto_feature__right--button__wrapper'>
+                            <ButtonPrimary label='DISCOVER OPTIONS' onClick={() => navigate('/')}/>
+                        </div>
                     </div>
                 </motion.div>
             </section>
