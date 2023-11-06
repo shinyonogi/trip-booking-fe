@@ -18,8 +18,8 @@ const BigHeader: React.FC = () => {
             const offset: number = window.scrollY;
             const windowHeight: number = window.innerHeight;
             setExpandHeader(offset > windowHeight * 0 && offset < windowHeight * 0.6);
-            setShrinkHeader((offset > windowHeight * 0.6 && offset < windowHeight * 1.1) || offset > windowHeight * 4);
-            setReachedGallery(offset > windowHeight * 1.1 && offset < windowHeight * 4);
+            setShrinkHeader((offset > windowHeight * 0.6 && offset < windowHeight * 1.4) || offset > windowHeight * 5);
+            setReachedGallery(offset > windowHeight * 1.4 && offset < windowHeight * 2.2);
         };
 
         window.addEventListener('scroll', handleScroll);

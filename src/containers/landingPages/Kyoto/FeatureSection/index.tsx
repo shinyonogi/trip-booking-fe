@@ -76,7 +76,7 @@ const KyotoFeatureSection: React.FC = () => {
       }, []);
 
     const scrollByFourWindowHeights = () => {
-    smoothScrollBy(window.innerHeight * 4.0, 2000);
+    smoothScrollBy(window.innerHeight * 4.5, 2000);
     };
 
     return (
