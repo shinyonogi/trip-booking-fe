@@ -75,11 +75,14 @@
 
 .big-header--scrolled-once .button-primary__wrapper {
     background-color: var(--beige);
+    transition: background-color 0.5s ease;
   }
 
 .big-header--scrolled-once .button-primary {
     background-color: var(--beige);
     color: var(--white);
+
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .big-header--scrolled-twice {
@@ -93,11 +96,14 @@
 
 .big-header--scrolled-twice .button-primary__wrapper {
     background-color: var(--beige);
+    transition: background-color 0.5s ease;
 }
 
 .big-header--scrolled-twice .button-primary {
     background-color: var(--beige);
     color: var(--white);
+
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 

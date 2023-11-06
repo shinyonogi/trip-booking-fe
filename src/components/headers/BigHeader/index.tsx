@@ -16,8 +16,8 @@ const BigHeader: React.FC = () => {
         const handleScroll = () => {
             const offset: number = window.scrollY;
             const windowHeight: number = window.innerHeight;
-            setIsScrolledOnce(offset > windowHeight * 0 && offset < windowHeight * 0.6);  /*|| offset > windowHeight * 4.0)); */
-            setIsScrolledTwice(offset > windowHeight * 0.6);
+            setIsScrolledOnce(offset > windowHeight * 0 && offset < windowHeight * 0.6);
+            setIsScrolledTwice(offset > windowHeight * 0.6 && offset < windowHeight * 2);
         };
 
         window.addEventListener('scroll', handleScroll);
