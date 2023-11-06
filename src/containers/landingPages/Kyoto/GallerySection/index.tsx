@@ -28,17 +28,8 @@ interface VariantDefinition extends Variants {
     };
 }
 
+
 const KyotoGallery: React.FC = () => {
-    const [refSection, inViewSection]: InViewHookResponse = useInView({
-        threshold: 0.05,
-        triggerOnce: false
-    });
-
-    const [refVideo, inViewVideo]: InViewHookResponse = useInView({
-        threshold: 0.1,
-        triggerOnce: false
-    });
-
     const variantsSection: VariantDefinition = {
         hidden: { opacity: 0, y: 100},
         visible: {
@@ -51,7 +42,7 @@ const KyotoGallery: React.FC = () => {
         }
     };
 
-    const variantsVideo: VariantDefinition = {
+    const variantsMedia: VariantDefinition = {
         hidden: { opacity: 0, y: 50 },
         visible: {
           opacity: 1,
@@ -62,6 +53,24 @@ const KyotoGallery: React.FC = () => {
           },
         }
     };
+
+    const refAndInViewMedia = {threshold: 0.1, triggerOnce: false};
+
+    const [refSection, inViewSection]: InViewHookResponse = useInView({
+        threshold: 0.05,
+        triggerOnce: false
+    });
+
+    const [refVideo, inViewVideo]: InViewHookResponse = useInView(refAndInViewMedia);
+
+    const [refImage1, inViewImage1]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImage2, inViewImage2]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImage3, inViewImage3]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImage4, inViewImage4]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImage5, inViewImage5]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImage6, inViewImage6]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImage7, inViewImage7]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImage8, inViewImage8]: InViewHookResponse = useInView(refAndInViewMedia);
 
     return (
         <>
@@ -84,33 +93,96 @@ const KyotoGallery: React.FC = () => {
                         ref={refVideo}
                         initial='hidden'
                         animate={inViewVideo ? 'visible' : 'hidden'}
-                        variants={variantsVideo}
+                        variants={variantsMedia}
                         autoPlay loop muted
                     >
                         <source src={galleryVideo1} type="video/mp4"/>
                     </motion.video>
                     <div className="kyoto-gallery__images-row-1">
                         <div className="kyoto-gallery__images-column-1">
-                            <img className="kyoto-gallery__images-column-1__image-1" src={galleryImage1} alt=""/>
-                            <img className="kyoto-gallery__images-column-1__image-2" src={galleryImage2} alt=""/>
+                            <motion.img
+                                className="kyoto-gallery__images-column-1__image-1"
+                                ref={refImage1}
+                                initial='hidden'
+                                animate={inViewImage1 ? 'visible' : 'hidden'}
+                                variants={variantsMedia}
+                                src={galleryImage1}
+                                alt=""
+                            />
+                            <motion.img
+                                className="kyoto-gallery__images-column-1__image-2"
+                                ref={refImage2}
+                                initial='hidden'
+                                animate={inViewImage2 ? 'visible' : 'hidden'}
+                                variants={variantsMedia}
+                                src={galleryImage2}
+                                alt=""
+                            />
                         </div>
                         <div className="kyoto-gallery__images-column-2">
-                            <img className="kyoto-gallery__images-column-2__image-1" src={galleryImage3} alt=""/>
-                            <img className="kyoto-gallery__images-column-2__image-2" src={galleryImage4} alt=""/>
+                            <motion.img
+                                className="kyoto-gallery__images-column-2__image-1"
+                                ref={refImage3}
+                                initial='hidden'
+                                animate={inViewImage3 ? 'visible' : 'hidden'}
+                                variants={variantsMedia}
+                                src={galleryImage3}
+                                alt=""
+                            />
+                            <motion.img
+                                className="kyoto-gallery__images-column-2__image-2"
+                                ref={refImage4}
+                                initial='hidden'
+                                animate={inViewImage4 ? 'visible' : 'hidden'}
+                                variants={variantsMedia}
+                                src={galleryImage4}
+                                alt=""
+                            />
                         </div>
                     </div>
                     <div className="kyoto-gallery__images-row-2">
-                        <img className="kyoto-gallery__images-row-2__image-1" src={galleryImage6} alt=""/>
+                        <motion.img
+                            className="kyoto-gallery__images-row-2__image-1"
+                            ref={refImage5}
+                            initial='hidden'
+                            animate={inViewImage5 ? 'visible' : 'hidden'}
+                            variants={variantsMedia}
+                            src={galleryImage6}
+                            alt=""
+                        />
                     </div>
                     <div className="kyoto-gallery__images-row-3">
-                        <img className="kyoto-gallery__images-row-3__image-1" src={galleryImage5} alt=""/>
-                        <img className="kyoto-gallery__images-row-3__image-2" src={galleryImage7} alt=""/>
-                        <img className="kyoto-gallery__images-row-3__image-3" src={galleryImage8} alt=""/>
+                        <motion.img
+                            className="kyoto-gallery__images-row-3__image-1"
+                            ref={refImage6}
+                            initial='hidden'
+                            animate={inViewImage6 ? 'visible' : 'hidden'}
+                            variants={variantsMedia}
+                            src={galleryImage5}
+                            alt=""
+                        />
+                        <motion.img
+                            className="kyoto-gallery__images-row-3__image-2"
+                            ref={refImage7}
+                            initial='hidden'
+                            animate={inViewImage7 ? 'visible' : 'hidden'}
+                            variants={variantsMedia}
+                            src={galleryImage7}
+                            alt=""/>
+                        <motion.img
+                            className="kyoto-gallery__images-row-3__image-3"
+                            ref={refImage8}
+                            initial='hidden'
+                            animate={inViewImage8 ? 'visible' : 'hidden'}
+                            variants={variantsMedia}
+                            src={galleryImage8}
+                            alt=""
+                        />
                     </div>
                 </div>
             </section>
         </>
-    )
+    );
 };
 
 export default KyotoGallery;
