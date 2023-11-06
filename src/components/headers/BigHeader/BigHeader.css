@@ -66,7 +66,16 @@
 .big-header--scrolled .big-header__hamburger,
 .big-header--scrolled .big-header__logo h1,
 .big-header--scrolled .big-header__logo p {
-    color: #000;
+    color: var(--black);
+}
+
+.big-header--scrolled .button-primary__wrapper {
+    background-color: var(--beige);
+  }
+
+.big-header--scrolled .button-primary {
+    background-color: var(--beige);
+    color: var(--white);
 }
 
 
