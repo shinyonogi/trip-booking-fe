@@ -1,7 +1,9 @@
 import BigHeader from "@/components/headers/BigHeader"
+
 import KyotoHeroSection from "./HeroSection";
 import KyotoFeatureSection from "./FeatureSection";
 import KyotoGallerySection from "./GallerySection";
+import KyotoOptionsSection from "./OptionsSection";
 
 const Kyoto: React.FC = () => {
     return (
@@ -11,6 +13,7 @@ const Kyoto: React.FC = () => {
                 <KyotoHeroSection />
                 <KyotoFeatureSection />
                 <KyotoGallerySection />
+                <KyotoOptionsSection />
             </div>
         </>
     );

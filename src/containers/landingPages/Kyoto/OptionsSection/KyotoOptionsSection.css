@@ -1,0 +1,99 @@
+.kyoto-options {
+    height: 88vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kyoto-options__title {
+    height: 15%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3em;
+    font-family: var(--font-main-english);
+}
+
+.kyoto-options__container {
+    height: 85%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.kyoto-options__option__wrapper {
+    width: 30%;
+    height: 100%;
+
+    border: solid 1px var(--black);
+}
+
+.kyoto-options__option {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+
+    margin: 1px 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: solid 1px var(--black);
+}
+
+.kyoto-options__option__title {
+    height: calc(10% - 1px);
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 2.5em;
+    font-family: var(--font-main-english);
+}
+
+.kyoto-options__option__line-bottom {
+    height: 1px;
+    width: 60%;
+
+    background-color: var(--black);
+}
+
+.kyoto-options__option__list {
+    height: 70%;
+    width: 80%;
+
+    margin-top: 1em;
+
+    font-size: 1.1em;
+}
+
+.kyoto-options__option--button__wrapper {
+    height: 20%;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kyoto-options__option__list li {
+    margin: 0.5em 0;
+}
+
+.kyoto-options__option__list li h4,
+.kyoto-options__option__list li p {
+    display: inline;
+}
+
+.kyoto-options__option__list ul {
+    width: 100%;
+
+    box-sizing: border-box;
+    padding-left: 2em;
+
+    list-style-type: circle;
+}
