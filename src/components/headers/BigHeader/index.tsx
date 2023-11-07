@@ -17,9 +17,9 @@ const BigHeader: React.FC = () => {
         const handleScroll = () => {
             const offset: number = window.scrollY;
             const windowHeight: number = window.innerHeight;
-            setExpandHeader(offset > windowHeight * 0 && offset < windowHeight * 0.6);
-            setShrinkHeader((offset > windowHeight * 0.6 && offset < windowHeight * 1.4) || offset > windowHeight * 5);
-            setReachedGallery(offset > windowHeight * 1.4 && offset < windowHeight * 2.2);
+            setExpandHeader(offset > windowHeight * 0 && offset < windowHeight * 0.7);
+            setShrinkHeader((offset > windowHeight * 0.7 && offset < windowHeight * 1.4) || offset > windowHeight * 5);
+            setReachedGallery(offset > windowHeight * 1.4 && offset < windowHeight * 2.0);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -32,8 +32,8 @@ const BigHeader: React.FC = () => {
         <>
             <header className={
                 `big-header
-                ${expandHeader ? 'big-header--scrolled-once' : ''}
-                ${shrinkHeader ? 'big-header--scrolled-twice' : ''}
+                ${expandHeader ? 'big-header--expanded' : ''}
+                ${shrinkHeader ? 'big-header--shrank' : ''}
                 ${reachedGallery ? 'big-header--reached-gallery' : ''}
                 `
                 }
