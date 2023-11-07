@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import { InViewHookResponse, useInView } from "react-intersection-observer";
 
-import "./KyotoGallerySection.css";
+import "./GallerySection.css";
 
 
 interface VariantDefinition extends Variants {
@@ -25,7 +25,7 @@ type GallerySectionProps = {
 };
 
 
-const KyotoGallery: React.FC<GallerySectionProps> = ({galleryTitle, galleryVideo, galleryImages}) => {
+const GallerySection: React.FC<GallerySectionProps> = ({galleryTitle, galleryVideo, galleryImages}) => {
     const variantsSection: VariantDefinition = {
         hidden: { opacity: 0, y: 100},
         visible: {
@@ -180,4 +180,4 @@ const KyotoGallery: React.FC<GallerySectionProps> = ({galleryTitle, galleryVideo
     );
 };
 
-export default KyotoGallery;
+export default GallerySection;

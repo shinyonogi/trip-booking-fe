@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import BigHeader from "@/components/headers/BigHeader"
 import KyotoHeroSection from "@/components/sections/HeroSection";
 import KyotoFeatureSection from "@/components/sections/FeatureSection";
-import KyotoGallerySection from "./GallerySection";
-import KyotoOptionsSection from "./OptionsSection";
+import KyotoGallerySection from "@/components/sections/GallerySection";
+import KyotoOptionsSection from "./KyotoOptionsSection";
 
 import kyotoHeroImage1 from '@/assets/images/kyoto/heroImage1.jpg';
 import kyotoHeroImage2 from '@/assets/images/kyoto/heroImage2.jpg';
