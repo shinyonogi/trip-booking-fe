@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import './HeroSection.css';
 
 type HeroSectionProps = {
-  cityNameJp: string,
-  cityNameEn: string,
-  images: string[]
+  heroCityNameJp: string,
+  heroCityNameEn: string,
+  heroBackgroundImages: string[]
 };
 
-const HeroSection: React.FC<HeroSectionProps> = ({cityNameJp, cityNameEn, images}) => {
+const HeroSection: React.FC<HeroSectionProps> = ({heroCityNameJp, heroCityNameEn, heroBackgroundImages}) => {
   const [imageIndex, setImageIndex] = useState<number>(0);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [scrollIndicatorBounce, setScrollIndicatorBounce] = useState<boolean>(false);
@@ -35,15 +35,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({cityNameJp, cityNameEn, images
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setImageIndex((prevIndex) => (prevIndex + 1) % heroBackgroundImages.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [heroBackgroundImages.length]);
 
   return (
     <section className='hero'>
-      {images.map((img, idx) => (
+      {heroBackgroundImages.map((img, idx) => (
         <div
           key={idx}
           className={`hero__image ${imageIndex === idx ? 'hero__image--visible' : ''}`}
@@ -52,8 +52,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({cityNameJp, cityNameEn, images
       ))}
 
       <div className='hero__title-container'>
-        <h1 className='hero__title hero__title--japanese'>{cityNameJp}</h1>
-        <h2 className='hero__title hero__title--english'>- {cityNameEn} -</h2>
+        <h1 className='hero__title hero__title--japanese'>{heroCityNameJp}</h1>
+        <h2 className='hero__title hero__title--english'>- {heroCityNameEn} -</h2>
       </div>
       <h1 className={
         `hero__scroll-indicator

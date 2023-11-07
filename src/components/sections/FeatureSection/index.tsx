@@ -21,11 +21,12 @@ interface VariantDefinition extends Variants {
 
 type FeatureSectionProps = {
     featureImage: string;
+    featureImageAlt: string;
     featureTitle: string;
     featureDescription: string;
 };
 
-const FeatureSection: React.FC<FeatureSectionProps> = ({featureImage, featureTitle, featureDescription}) => {
+const FeatureSection: React.FC<FeatureSectionProps> = ({featureImage, featureImageAlt, featureTitle, featureDescription}) => {
     const [refLeft, inViewLeft]: InViewHookResponse = useInView({
         threshold: 0.1,
         triggerOnce: false
@@ -96,8 +97,8 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({featureImage, featureTit
                 >
                     <img
                         className='feature__left-img'
-                        alt='Woman in traditional Japanese dress with umbrella walks in a traditional-looking Japanese street.'
                         src={featureImage}
+                        alt={featureImageAlt}
                     />
                 </motion.div>
                 <motion.div
