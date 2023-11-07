@@ -38,11 +38,19 @@
 }
 
 .kyoto-gallery__video {
+    position: relative;
     height: calc(100% * 1/6);
     width: 100%;
 
     object-fit: cover;
     object-position: center;
+}
+
+.kyoto-gallery__video video {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
 }
 
 .kyoto-gallery__image {
@@ -52,28 +60,37 @@
 
 .kyoto-gallery__image__title {
     position: absolute;
-    top: calc(50%);
-    left: calc(50% - 1.4em);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 0.5em;
 
     color: transparent;
     font-size: 3em;
     font-family: var(--font-japanese);
+    overflow: visible;
 
-    transition: color 0.5s ease;
+    transition: color 1s ease;
 }
 
-.kyoto-gallery__image img {
-    transition: opacity 0.5s ease;
+.kyoto-gallery__image img,
+.kyoto-gallery__video video {
+    object-fit: cover;
+    object-position: center;
+
+    transition: opacity 1s ease;
 }
 
-.kyoto-gallery__image:hover img {
+.kyoto-gallery__image:hover img,
+.kyoto-gallery__video:hover video {
     opacity: 0.5;
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
 }
 
-.kyoto-gallery__image:hover .kyoto-gallery__image__title{
+.kyoto-gallery__image:hover .kyoto-gallery__image__title,
+.kyoto-gallery__video:hover .kyoto-gallery__image__title {
     color: var(--white);
-    transition: color 0.5s ease;
+    transition: color 1s ease;
 }
 
 .kyoto-gallery__images-row-1 {
@@ -101,16 +118,12 @@
 
 .kyoto-gallery__image img{
     height: 100%;
-
-    object-fit: cover;
-    object-position: center;
+    width: 100%;
 }
 
 .kyoto-gallery__images-column-1__image-2 {
     height: calc(45% - 1em);
-
-    object-fit: cover;
-    object-position: center;
+    width: 100%;
 }
 
 .kyoto-gallery__images-column-2 {
@@ -126,16 +139,10 @@
 .kyoto-gallery__images-column-2__image-1 {
     height: calc(45% - 1em);
     margin-bottom: 2em;
-
-    object-fit: cover;
-    object-position: center;
 }
 
 .kyoto-gallery__images-column-2__image-2 {
     height: calc(55% - 1em);
-
-    object-fit: cover;
-    object-position: center;
 }
 
 .kyoto-gallery__images-row-2 {
@@ -148,37 +155,30 @@
 .kyoto-gallery__images-row-2__image-1 {
     height: 100%;
     width: 100%;
-
-    object-fit: cover;
-    object-position: center;
 }
 
 .kyoto-gallery__images-row-3 {
     height: calc(100% * 16.5/210);
+    width: 100%;
 
     display: flex;
+}
+
+.kyoto-gallery__images-row-3 .kyoto-gallery__image__title {
+    font-size: 2em;
 }
 
 .kyoto-gallery__images-row-3__image-1 {
     width: calc(100% * 1/3 - 2em);
     margin-right: 2em;
-
-    object-fit: cover;
-    object-position: center;
 }
 
 .kyoto-gallery__images-row-3__image-2 {
     width: calc(100% * 1/3);
-
-    object-fit: cover;
-    object-position: center;
 }
 
 .kyoto-gallery__images-row-3__image-3 {
     width: calc(100% * 1/3 - 2em);
     margin-left: 2em;
-
-    object-fit: cover;
-    object-position: center;
 }
 

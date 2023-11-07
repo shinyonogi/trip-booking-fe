@@ -52,6 +52,16 @@ const Kyoto: React.FC = () => {
                             kyotoGalleryImage7,
                             kyotoGalleryImage8
                         ]}
+                        galleryImageTitles={[
+                            "法隆寺",
+                            "水吐き",
+                            "かっこいい神社",
+                            "着物",
+                            "道綺麗",
+                            "坊主",
+                            "清水寺",
+                            "紅葉"
+                        ]}
                     />
                     <KyotoOptionsSection />
                 </div>

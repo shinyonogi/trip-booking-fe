@@ -22,10 +22,11 @@ type GallerySectionProps = {
     galleryTitle: string;
     galleryVideo: string;
     galleryImages: string[];
+    galleryImageTitles: string[];
 };
 
 
-const GallerySection: React.FC<GallerySectionProps> = ({galleryTitle, galleryVideo, galleryImages}) => {
+const GallerySection: React.FC<GallerySectionProps> = ({galleryTitle, galleryVideo, galleryImages, galleryImageTitles}) => {
     const variantsSection: VariantDefinition = {
         hidden: { opacity: 0, y: 100},
         visible: {
@@ -58,6 +59,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({galleryTitle, galleryVid
     });
 
     const [galleryImage1, galleryImage2, galleryImage3, galleryImage4, galleryImage5, galleryImage6, galleryImage7, galleryImage8] = [...galleryImages];
+    const [galleryImageTitle1, galleryImageTitle2, galleryImageTitle3, galleryImageTitle4, galleryImageTitle5, galleryImageTitle6, galleryImageTitle7, galleryImageTitle8] = [...galleryImageTitles];
 
     const [refVideo, inViewVideo]: InViewHookResponse = useInView(refAndInViewMedia);
     const [refImagesRow1First, inViewImagesRow1First]: InViewHookResponse = useInView(refAndInViewMedia);
@@ -82,16 +84,18 @@ const GallerySection: React.FC<GallerySectionProps> = ({galleryTitle, galleryVid
                     {galleryTitle}
                 </motion.h1>
                 <div className="kyoto-gallery__media__container">
-                    <motion.video
+                    <motion.div
                         className="kyoto-gallery__video"
                         ref={refVideo}
                         initial='hidden'
                         animate={inViewVideo ? 'visible' : 'hidden'}
                         variants={variantsMedia}
-                        autoPlay loop muted
                     >
-                        <source src={galleryVideo} type="video/mp4"/>
-                    </motion.video>
+                        <video autoPlay loop muted>
+                            <source src={galleryVideo} type="video/mp4"/>
+                        </video>
+                        <h3 className="kyoto-gallery__image__title">京都じゃねえ</h3>
+                    </motion.div>
                     <div className="kyoto-gallery__images-row-1">
                         <div className="kyoto-gallery__images-column-1">
                             <motion.div
@@ -102,77 +106,85 @@ const GallerySection: React.FC<GallerySectionProps> = ({galleryTitle, galleryVid
                                 variants={variantsMedia}
                             >
                                 <img src={galleryImage1} alt=""/>
-                                <h3 className="kyoto-gallery__image__title">法隆寺</h3>
+                                <h3 className="kyoto-gallery__image__title">{galleryImageTitle1}</h3>
                             </motion.div>
-                            <motion.img
-                                className="kyoto-gallery__images-column-1__image-2"
+                            <motion.div
+                                className="kyoto-gallery__images-column-1__image-2 kyoto-gallery__image"
                                 ref={refImageRow1Second}
                                 initial='hidden'
                                 animate={inViewImageRow1Second ? 'visible' : 'hidden'}
                                 variants={variantsMedia}
-                                src={galleryImage2}
-                                alt=""
-                            />
+                            >
+                                <img src={galleryImage2} alt=""/>
+                                <h3 className="kyoto-gallery__image__title">{galleryImageTitle2}</h3>
+                            </motion.div>
                         </div>
                         <div className="kyoto-gallery__images-column-2">
-                            <motion.img
-                                className="kyoto-gallery__images-column-2__image-1"
+                            <motion.div
+                                className="kyoto-gallery__images-column-2__image-1 kyoto-gallery__image"
                                 ref={refImagesRow1First}
                                 initial='hidden'
                                 animate={inViewImagesRow1First ? 'visible' : 'hidden'}
                                 variants={variantsMedia}
-                                src={galleryImage3}
-                                alt=""
-                            />
-                            <motion.img
-                                className="kyoto-gallery__images-column-2__image-2"
+                            >
+                                <img src={galleryImage3} alt=""/>
+                                <h3 className="kyoto-gallery__image__title">{galleryImageTitle3}</h3>
+                            </motion.div>
+                            <motion.div
+                                className="kyoto-gallery__images-column-2__image-2 kyoto-gallery__image"
                                 ref={refImageRow1Third}
                                 initial='hidden'
                                 animate={inViewImageRow1Third ? 'visible' : 'hidden'}
                                 variants={variantsMedia}
-                                src={galleryImage4}
-                                alt=""
-                            />
+                            >
+                                <img src={galleryImage4} alt=""/>
+                                <h3 className="kyoto-gallery__image__title">{galleryImageTitle4}</h3>
+                            </motion.div>
                         </div>
                     </div>
                     <div className="kyoto-gallery__images-row-2">
-                        <motion.img
-                            className="kyoto-gallery__images-row-2__image-1"
+                        <motion.div
+                            className="kyoto-gallery__images-row-2__image-1 kyoto-gallery__image"
                             ref={refImageRow2}
                             initial='hidden'
                             animate={inViewImageRow2 ? 'visible' : 'hidden'}
                             variants={variantsMedia}
-                            src={galleryImage6}
-                            alt=""
-                        />
+                        >
+                            <img src={galleryImage6} alt=""/>
+                            <h3 className="kyoto-gallery__image__title">{galleryImageTitle5}</h3>
+                        </motion.div>
                     </div>
                     <div className="kyoto-gallery__images-row-3">
-                        <motion.img
-                            className="kyoto-gallery__images-row-3__image-1"
+                        <motion.div
+                            className="kyoto-gallery__images-row-3__image-1 kyoto-gallery__image"
                             ref={refImagesRow3}
                             initial='hidden'
                             animate={inViewImagesRow3 ? 'visible' : 'hidden'}
                             variants={variantsMedia}
-                            src={galleryImage5}
-                            alt=""
-                        />
-                        <motion.img
-                            className="kyoto-gallery__images-row-3__image-2"
+                        >
+                            <img src={galleryImage5} alt=""/>
+                            <h3 className="kyoto-gallery__image__title">{galleryImageTitle6}</h3>
+                        </motion.div>
+                        <motion.div
+                            className="kyoto-gallery__images-row-3__image-2 kyoto-gallery__image"
                             ref={refImagesRow3}
                             initial='hidden'
                             animate={inViewImagesRow3 ? 'visible' : 'hidden'}
                             variants={variantsMedia}
-                            src={galleryImage7}
-                            alt=""/>
-                        <motion.img
-                            className="kyoto-gallery__images-row-3__image-3"
+                        >
+                            <img src={galleryImage7} alt=""/>
+                            <h3 className="kyoto-gallery__image__title">{galleryImageTitle7}</h3>
+                        </motion.div>
+                        <motion.div
+                            className="kyoto-gallery__images-row-3__image-3 kyoto-gallery__image"
                             ref={refImagesRow3}
                             initial='hidden'
                             animate={inViewImagesRow3 ? 'visible' : 'hidden'}
                             variants={variantsMedia}
-                            src={galleryImage8}
-                            alt=""
-                        />
+                        >
+                            <img src={galleryImage8} alt=""/>
+                            <h3 className="kyoto-gallery__image__title">{galleryImageTitle8}</h3>
+                        </motion.div>
                     </div>
                 </div>
             </section>
