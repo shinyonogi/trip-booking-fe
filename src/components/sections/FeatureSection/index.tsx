@@ -1,11 +1,10 @@
 import { motion, Variants } from 'framer-motion';
 import { InViewHookResponse, useInView } from 'react-intersection-observer';
+import { useCallback } from 'react';
 
 import ButtonPrimary from '@/components/buttons/ButtonPrimary';
-import featureImage1 from '@/assets/images/kyoto/featureImage1.jpg';
 
-import './KyotoFeatureSection.css';
-import { useCallback } from 'react';
+import './FeatureSection.css';
 
 
 interface VariantDefinition extends Variants {
@@ -20,7 +19,13 @@ interface VariantDefinition extends Variants {
     };
 }
 
-const KyotoFeatureSection: React.FC = () => {
+type FeatureSectionProps = {
+    featureImage: string;
+    featureTitle: string;
+    featureDescription: string;
+};
+
+const FeatureSection: React.FC<FeatureSectionProps> = ({featureImage, featureTitle, featureDescription}) => {
     const [refLeft, inViewLeft]: InViewHookResponse = useInView({
         threshold: 0.1,
         triggerOnce: false
@@ -81,31 +86,31 @@ const KyotoFeatureSection: React.FC = () => {
 
     return (
         <>
-            <section className='kyoto-feature'>
+            <section className='feature'>
                 <motion.div
-                    className='kyoto-feature__left'
+                    className='feature__left'
                     ref={refLeft}
                     initial="hidden"
                     animate={inViewLeft ? "visible" : "hidden"}
                     variants={variantsLeft}
                 >
                     <img
-                        className='kyoto-feature__left-img'
+                        className='feature__left-img'
                         alt='Woman in traditional Japanese dress with umbrella walks in a traditional-looking Japanese street.'
-                        src={featureImage1}
+                        src={featureImage}
                     />
                 </motion.div>
                 <motion.div
-                    className='kyoto-feature__right'
+                    className='feature__right'
                     ref={refRight}
                     initial="hidden"
                     animate={inViewRight ? "visible" : "hidden"}
                     variants={variantsRight}
                 >
-                    <div className='kyoto-feature__right__content'>
-                        <h2 className='kyoto-feature__right-title'>"A City with Timeless Elegance"</h2>
-                        <p className='kyoto-feature__right-description'>Kyoto, a former capital with over a millennium of heritage, embodies Japan's deep-rooted traditions and history. Blending ancient temples with modern rhythms and scenic geisha districts, it offers a captivating voyage through time.</p>
-                        <div className='kyoto_feature__right--button__wrapper'>
+                    <div className='feature__right__content'>
+                        <h2 className='feature__right-title'>{featureTitle}</h2>
+                        <p className='feature__right-description'>{featureDescription}</p>
+                        <div className='feature__right--button__wrapper'>
                             <ButtonPrimary label='DISCOVER OPTIONS' onClick={scrollByFourWindowHeights}/>
                         </div>
                     </div>
@@ -115,4 +120,4 @@ const KyotoFeatureSection: React.FC = () => {
     );
 }
 
-export default KyotoFeatureSection;
+export default FeatureSection;

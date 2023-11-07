@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import heroImage1 from '@/assets/images/kyoto/heroImage1.jpg';
-import heroImage2 from '@/assets/images/kyoto/heroImage2.jpg';
-import heroImage3 from '@/assets/images/kyoto/heroImage3.jpg';
+import './HeroSection.css';
 
-import './KyotoHeroSection.css';
+type HeroSectionProps = {
+  cityNameJp: string,
+  cityNameEn: string,
+  images: string[]
+};
 
-
-const KyotoHeroSection: React.FC = () => {
+const HeroSection: React.FC<HeroSectionProps> = ({cityNameJp, cityNameEn, images}) => {
   const [imageIndex, setImageIndex] = useState<number>(0);
-  const images: string[] = [heroImage1, heroImage2, heroImage3];
-
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
   const [scrollIndicatorBounce, setScrollIndicatorBounce] = useState<boolean>(false);
 
   useEffect(() => {
@@ -44,28 +42,28 @@ const KyotoHeroSection: React.FC = () => {
   }, [images.length]);
 
   return (
-    <section className='kyoto-hero'>
+    <section className='hero'>
       {images.map((img, idx) => (
         <div
           key={idx}
-          className={`kyoto-hero__image ${imageIndex === idx ? 'kyoto-hero__image--visible' : ''}`}
+          className={`hero__image ${imageIndex === idx ? 'hero__image--visible' : ''}`}
           style={{ backgroundImage: `url(${img})` }}
         ></div>
       ))}
 
-      <div className='kyoto-hero__title-container'>
-        <h1 className='kyoto-hero__title kyoto-hero__title--japanese'>京都</h1>
-        <h2 className='kyoto-hero__title kyoto-hero__title--english'>- Kyoto -</h2>
+      <div className='hero__title-container'>
+        <h1 className='hero__title hero__title--japanese'>{cityNameJp}</h1>
+        <h2 className='hero__title hero__title--english'>- {cityNameEn} -</h2>
       </div>
       <h1 className={
-        `kyoto-hero__scroll-indicator
-        ${scrollIndicatorBounce ? 'kyoto-hero__scroll-indicator--bouncing': ''}
-        ${isScrolled ? 'kyoto-hero__scroll-indicator--scrolled' : ''}`
-        }>
-          ↓
-        </h1>
+        `hero__scroll-indicator
+        ${scrollIndicatorBounce ? 'hero__scroll-indicator--bouncing': ''}
+        ${isScrolled ? 'hero__scroll-indicator--scrolled' : ''}`
+      }>
+        ↓
+      </h1>
     </section>
   );
 };
 
-export default KyotoHeroSection;
+export default HeroSection;

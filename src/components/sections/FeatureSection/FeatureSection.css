@@ -1,4 +1,4 @@
-.kyoto-feature {
+.feature {
     position: relative;
     height: 88vh;
     width: 100vw;
@@ -10,19 +10,19 @@
     color: var(--black);
 }
 
-.kyoto-feature__left {
+.feature__left {
     height: 100%;
     width: 50%;
 }
 
-.kyoto-feature__left-img {
+.feature__left-img {
     height: 100%;
 
     object-fit: cover;
     object-position: center;
 }
 
-.kyoto-feature__right {
+.feature__right {
     position: relative;
     height: 100%;
     width: 50%;
@@ -32,7 +32,7 @@
     justify-content: center;
 }
 
-.kyoto-feature__right__content {
+.feature__right__content {
     position: relative;
     top: 2em;
     width: 100%;
@@ -43,7 +43,7 @@
     justify-content: center;
 }
 
-.kyoto-feature__right-title {
+.feature__right-title {
     width: 100%;
 
     margin-bottom: 0.5em;
@@ -54,7 +54,7 @@
     font-family: var(--font-main-english);
 }
 
-.kyoto-feature__right-description {
+.feature__right-description {
     width: 65%;
 
     margin-bottom: 3em;
@@ -63,11 +63,11 @@
     text-align: justify;
 }
 
-.kyoto_feature__right--button__wrapper {
+.feature__right--button__wrapper {
     width: 65%;
 }
 
-.kyoto_feature__right--button__wrapper .button-primary {
+.feature__right--button__wrapper .button-primary {
     padding: 0.8em 0;
     font-size: 1.2em;
 }

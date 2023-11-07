@@ -64,9 +64,9 @@ const KyotoGallery: React.FC = () => {
 
     const [refVideo, inViewVideo]: InViewHookResponse = useInView(refAndInViewMedia);
     const [refImagesRow1, inViewImagesRow1]: InViewHookResponse = useInView(refAndInViewMedia);
-    const [refImage2, inViewImage2]: InViewHookResponse = useInView(refAndInViewMedia);
-    const [refImage4, inViewImage4]: InViewHookResponse = useInView(refAndInViewMedia);
-    const [refImage5, inViewImage5]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImageRow1One, inViewImageRow1One]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImageRow1Two, inViewImageRow1Two]: InViewHookResponse = useInView(refAndInViewMedia);
+    const [refImageRow2, inViewImageRow2]: InViewHookResponse = useInView(refAndInViewMedia);
     const [refImagesRow3, inViewImagesRow3]: InViewHookResponse = useInView(refAndInViewMedia);
 
     return (
@@ -97,20 +97,21 @@ const KyotoGallery: React.FC = () => {
                     </motion.video>
                     <div className="kyoto-gallery__images-row-1">
                         <div className="kyoto-gallery__images-column-1">
-                            <motion.img
-                                className="kyoto-gallery__images-column-1__image-1"
+                            <motion.div
+                                className="kyoto-gallery__images-column-1__image-1 kyoto-gallery__image"
                                 ref={refImagesRow1}
                                 initial='hidden'
                                 animate={inViewImagesRow1 ? 'visible' : 'hidden'}
                                 variants={variantsMedia}
-                                src={galleryImage1}
-                                alt=""
-                            />
+                            >
+                                <img src={galleryImage1} alt=""/>
+                                <h3 className="kyoto-gallery__image__title">法隆寺</h3>
+                            </motion.div>
                             <motion.img
                                 className="kyoto-gallery__images-column-1__image-2"
-                                ref={refImage2}
+                                ref={refImageRow1One}
                                 initial='hidden'
-                                animate={inViewImage2 ? 'visible' : 'hidden'}
+                                animate={inViewImageRow1One ? 'visible' : 'hidden'}
                                 variants={variantsMedia}
                                 src={galleryImage2}
                                 alt=""
@@ -128,9 +129,9 @@ const KyotoGallery: React.FC = () => {
                             />
                             <motion.img
                                 className="kyoto-gallery__images-column-2__image-2"
-                                ref={refImage4}
+                                ref={refImageRow1Two}
                                 initial='hidden'
-                                animate={inViewImage4 ? 'visible' : 'hidden'}
+                                animate={inViewImageRow1Two ? 'visible' : 'hidden'}
                                 variants={variantsMedia}
                                 src={galleryImage4}
                                 alt=""
@@ -140,9 +141,9 @@ const KyotoGallery: React.FC = () => {
                     <div className="kyoto-gallery__images-row-2">
                         <motion.img
                             className="kyoto-gallery__images-row-2__image-1"
-                            ref={refImage5}
+                            ref={refImageRow2}
                             initial='hidden'
-                            animate={inViewImage5 ? 'visible' : 'hidden'}
+                            animate={inViewImageRow2 ? 'visible' : 'hidden'}
                             variants={variantsMedia}
                             src={galleryImage6}
                             alt=""
