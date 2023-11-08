@@ -72,7 +72,7 @@ const KyotoOptionsSection: React.FC = () => {
                                 </li>
                             </ul>
                             <div className="kyoto-options__option--button__wrapper">
-                                <ButtonPrimary label="Choose 1 Day" onClick={() => navigate('/')}/>
+                                <ButtonPrimary label="Choose 1 Day" onClick={() => {navigate('/')}}/>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ const KyotoOptionsSection: React.FC = () => {
                                 </li>
                             </ul>
                             <div className="kyoto-options__option--button__wrapper">
-                                <ButtonPrimary label="Choose 3 Days" onClick={() => navigate('/')}/>
+                                <ButtonPrimary label="Choose 3 Days" onClick={() => {navigate('/')}}/>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@ const KyotoOptionsSection: React.FC = () => {
                                 </li>
                             </ul>
                             <div className="kyoto-options__option--button__wrapper">
-                                <ButtonPrimary label="Custom Plan" onClick={() => navigate('/')}/>
+                                <ButtonPrimary label="Custom Plan" onClick={() => {navigate('/')}}/>
                             </div>
                         </div>
                     </div>

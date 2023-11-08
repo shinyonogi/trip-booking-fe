@@ -18,7 +18,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({heroCityNameJp, heroCityNameEn
       setScrollIndicatorBounce((prev) => !prev);
     }, 1000);
 
-    return () => clearInterval(intervalId);
+    return () => {clearInterval(intervalId)};
   });
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({heroCityNameJp, heroCityNameEn
       setImageIndex((prevIndex) => (prevIndex + 1) % heroBackgroundImages.length);
     }, 5000);
 
-    return () => clearInterval(interval);
+    return () => {clearInterval(interval)};
   }, [heroBackgroundImages.length]);
 
   return (

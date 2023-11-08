@@ -48,7 +48,7 @@ const BigHeader: React.FC = () => {
                     <p>Made in Kyoto</p>
                 </div>
                 <div className='big-header--book-button__wrapper'>
-                    <ButtonPrimary label='BOOK NOW' onClick={() => navigate('/')}/>
+                    <ButtonPrimary label='BOOK NOW' onClick={() => {navigate('/')}}/>
                 </div>
             </header>
         </>
