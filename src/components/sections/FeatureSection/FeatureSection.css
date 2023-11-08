@@ -72,15 +72,29 @@
     font-size: 1.2em;
 }
 
-@media (max-width: 1440px) {
+
+@media (max-width: 1430px) {
     .feature__right-title {
-        font-size: 2.25em;
+        width: 65%;
+    }
+
+    .feature__right-title span {
+        display: none;
+    }
+}
+
+@media (max-width: 1170px) {
+    .feature__right-title {
+        font-size: 2.5em;
     }
 }
 
 @media (max-width: 1024px) {
-    .feature__right-title {
-        font-size: 2em;
+    .feature__left-img {
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
     }
 }
 

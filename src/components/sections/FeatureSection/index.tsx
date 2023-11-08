@@ -109,7 +109,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({featureImage, featureIma
                     variants={variantsRight}
                 >
                     <div className='feature__right__content'>
-                        <h2 className='feature__right-title'>{featureTitle}</h2>
+                        <h2 className='feature__right-title'><span>"</span>{featureTitle}<span>"</span></h2>
                         <p className='feature__right-description'>{featureDescription}</p>
                         <div className='feature__right--button__wrapper'>
                             <ButtonPrimary label='DISCOVER OPTIONS' onClick={scrollByFourWindowHeights}/>
