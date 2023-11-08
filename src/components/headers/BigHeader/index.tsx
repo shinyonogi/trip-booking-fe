@@ -4,11 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import ButtonPrimary from '@/components/buttons/ButtonPrimary';
+import Menu from '@/components/Menu';
 
 import './BigHeader.css';
 
 const BigHeader: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();
+
+    const [menuToggled, setMenuToggled] = useState<boolean>(false);
+
     const [expandHeader, setExpandHeader] = useState<boolean>(false);
     const [shrinkHeader, setShrinkHeader] = useState<boolean>(false);
     const [reachedGallery, setReachedGallery] = useState<boolean>(false);
@@ -30,6 +34,7 @@ const BigHeader: React.FC = () => {
 
     return (
         <>
+            <Menu menuToggled={menuToggled}/>
             <header className={
                 `big-header
                 ${expandHeader ? 'big-header--expanded' : ''}
@@ -39,7 +44,7 @@ const BigHeader: React.FC = () => {
                 }
             >
                 <div className='big-header--hamburger__wrapper'>
-                    <button className='big-header__hamburger' type='button'>
+                    <button className='big-header__hamburger' type='button' onClick={() => {setMenuToggled(true)}}>
                         <FontAwesomeIcon icon={faBars} size='lg'/>
                     </button>
                 </div>
