@@ -1,9 +1,10 @@
 # Trip Booking App (FE) with React + TypeScript + Vite
+Front-End Application built with React 18 :)
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
 - You have a `<Windows/Linux/Mac>` machine.
-- You have installed [Docker](https://www.docker.com/products/docker-desktop).
+- You have installed [Docker](https://www.docker.com/products/docker-desktop). (When running with Docker)
 - You have installed the latest version of [Node.js and npm](https://nodejs.org/). (When running without Docker)
 
 ## Getting Started
@@ -29,4 +30,11 @@ docker run -d -p 5173:5173 trip-website-fe
 npm install
 npm run dev
 ```
+
+## Dependencies
+Major dependencies used in this project are...
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [i18next](https://www.i18next.com/) for internationalization
+- [normalize.css](https://github.com/necolas/normalize.css) for consistent styling and [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for responsive loading
+- [React Router Dom](https://reactrouter.com/en/main) for navigation
 
