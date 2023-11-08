@@ -13,8 +13,8 @@ To run this application, follow these steps:
 ### Clone the repo
 On your computer, navigate to the directory where you want to clone this repo. Clone the repo using and change the directory.
 ```bash
-git clone https://github.com/shinyonogi/trip-website-fe
-cd trip-website-fe
+git clone https://github.com/shinyonogi/trip-booking-fe
+cd trip-booking-fe
 ```
 
 ### Run the application
@@ -22,8 +22,8 @@ cd trip-website-fe
 If you are using Docker, build and run it.
 You can also copy & paste the following command:
 ```bash
-docker build -t trip-website-fe .
-docker run -d -p 5173:5173 trip-website-fe
+docker build -t trip-booking-fe .
+docker run -d -p 5173:5173 trip-booking-fe
 ```
 #### Without Docker
 ```bash
