@@ -42,7 +42,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({heroCityNameJp, heroCityNameEn
   }, [heroBackgroundImages.length]);
 
   return (
-    <section className='hero'>
+    <>
+      <section className='hero'>
       {heroBackgroundImages.map((img, idx) => (
         <div
           key={idx}
@@ -63,6 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({heroCityNameJp, heroCityNameEn
         ↓
       </h1>
     </section>
+    </>
   );
 };
 
