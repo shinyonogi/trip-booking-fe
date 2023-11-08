@@ -102,3 +102,15 @@
 .option__item__list__icon {
     width: 5%;
 }
+
+@media (max-width: 1366px) {
+    .kyoto-options__option__list {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    .kyoto-options__option__list {
+        font-size: 0.9rem;
+    }
+}
