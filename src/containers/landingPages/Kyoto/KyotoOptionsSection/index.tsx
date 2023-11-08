@@ -116,19 +116,19 @@ const KyotoOptionsSection: React.FC = () => {
                             <ul className="kyoto-options__option__list">
                                 <li>
                                     <h4><FontAwesomeIcon icon={faTaxi} className='option__item__list__icon'/> Taxi: </h4>
-                                    <p>Half-day to 3-day options.</p>
+                                    <p><strong>Half-day</strong> to <strong>3-day</strong> options.</p>
                                 </li>
                                 <li>
                                     <h4><FontAwesomeIcon icon={faHotel} className='option__item__list__icon'/> Hotel: </h4>
-                                    <p>Luxury to guesthouse choices.</p>
+                                    <p><strong>Luxury</strong> to guesthouse choices.</p>
                                 </li>
                                 <li>
                                     <h4><FontAwesomeIcon icon={faLocationDot} className='option__item__list__icon'/> Sightseeing: </h4>
-                                    <p>30+ Spots.</p>
+                                    <p><strong>30+</strong> Spots.</p>
                                 </li>
                                 <li>
                                     <h4><FontAwesomeIcon icon={faUtensils} className='option__item__list__icon'/> Dining: </h4>
-                                    <p>Kyoto cuisine, vegan, market tour.</p>
+                                    <p><strong>Kyoto cuisine</strong>, vegan, market tour.</p>
                                 </li>
                                 <li>
                                     <h4><FontAwesomeIcon icon={faPersonWalking} className='option__item__list__icon'/> Activities :</h4>
@@ -136,7 +136,7 @@ const KyotoOptionsSection: React.FC = () => {
                                 </li>
                                 <li>
                                     <h4><FontAwesomeIcon icon={faComment} className='option__item__list__icon'/> Guide: </h4>
-                                    <p>Multilingual options.</p>
+                                    <p><strong>Multilingual</strong> options.</p>
                                 </li>
                                 <li>
                                     <h4><FontAwesomeIcon icon={faWind} className='option__item__list__icon'/> Seasonal Options: </h4>

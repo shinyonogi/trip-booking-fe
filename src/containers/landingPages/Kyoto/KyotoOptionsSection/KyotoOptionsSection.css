@@ -98,3 +98,7 @@
 
     list-style-type: circle;
 }
+
+.option__item__list__icon {
+    width: 5%;
+}
