@@ -38,7 +38,7 @@
 }
 
 .big-header__logo {
-    width: calc(70% - 60px);
+    max-width: calc(70% - 60px);
     position: relative;
     top: 0.5em;
 
