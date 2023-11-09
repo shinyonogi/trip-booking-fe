@@ -35,7 +35,7 @@ const BigHeader: React.FC = () => {
 
     return (
         <>
-            <Menu menuToggled={menuToggled}/>
+            <Menu menuToggled={menuToggled} setMenuToggled={setMenuToggled}/>
             <header className={
                 `big-header
                 ${expandHeader ? 'big-header--expanded' : ''}
