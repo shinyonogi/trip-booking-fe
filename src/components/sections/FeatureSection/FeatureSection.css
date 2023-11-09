@@ -1,13 +1,15 @@
 .feature {
     position: relative;
     height: 88vh;
-    width: 100vw;
+    width: 100%;
 
     display: flex;
     flex-wrap: wrap;
 
     background-color: var(--white);
     color: var(--black);
+
+    overflow: hidden;
 }
 
 .feature__left {

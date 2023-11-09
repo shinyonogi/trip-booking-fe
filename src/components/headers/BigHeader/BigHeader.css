@@ -1,6 +1,6 @@
 .big-header {
     height: 12vh;
-    width: 100vw;
+    width: 100%;
     position: fixed;
     z-index: 2;
     top: 0;
