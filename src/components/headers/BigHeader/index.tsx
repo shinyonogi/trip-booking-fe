@@ -2,13 +2,18 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
 import ButtonPrimary from '@/components/buttons/ButtonPrimary';
+import Menu from '@/components/Menu';
 
 import './BigHeader.css';
 
 const BigHeader: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();
+
+    const [menuToggled, setMenuToggled] = useState<boolean>(false);
+
     const [expandHeader, setExpandHeader] = useState<boolean>(false);
     const [shrinkHeader, setShrinkHeader] = useState<boolean>(false);
     const [reachedGallery, setReachedGallery] = useState<boolean>(false);
@@ -30,6 +35,7 @@ const BigHeader: React.FC = () => {
 
     return (
         <>
+            <Menu menuToggled={menuToggled} setMenuToggled={setMenuToggled}/>
             <header className={
                 `big-header
                 ${expandHeader ? 'big-header--expanded' : ''}
@@ -39,9 +45,16 @@ const BigHeader: React.FC = () => {
                 }
             >
                 <div className='big-header--hamburger__wrapper'>
-                    <button className='big-header__hamburger' type='button'>
+                    <motion.button
+                        className='big-header__hamburger'
+                        type='button'
+                        onClick={() => {setMenuToggled(true)}}
+                        whileHover={{ scale: 1.3 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    >
                         <FontAwesomeIcon icon={faBars} size='lg'/>
-                    </button>
+                    </motion.button>
                 </div>
                 <div className='big-header__logo'>
                     <h1>Explore Japan</h1>

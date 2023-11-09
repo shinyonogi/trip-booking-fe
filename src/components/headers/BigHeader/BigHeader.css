@@ -25,10 +25,12 @@
 
 .big-header__hamburger {
     position: relative;
-    left: 7em;
+    left: 5em;
 
     background-color: transparent;
     border: none;
+
+    font-size: 1.5em;
 }
 
 .big-header__hamburger:hover {

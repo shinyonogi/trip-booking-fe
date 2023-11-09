@@ -47,7 +47,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({featureImage, featureIma
         }
     };
 
-      const variantsRight: VariantDefinition = {
+    const variantsRight: VariantDefinition = {
         hidden: { opacity: 0, x: 100 },
         visible: {
           opacity: 1,
