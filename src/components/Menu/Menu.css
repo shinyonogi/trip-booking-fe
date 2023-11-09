@@ -58,10 +58,11 @@
     visibility: hidden;
 }
 
+/*
 .menu__list__item:hover span {
     visibility: visible;
 }
-
+*/
 
 .menu__header__logo {
     position: absolute;

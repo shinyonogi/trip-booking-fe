@@ -34,8 +34,8 @@
 }
 
 .kyoto-options__option {
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
+    width: calc(100% - 0.125em);
+    height: calc(100% - 0.125em);
 
     margin: 1px 1px;
     display: flex;
