@@ -37,4 +37,6 @@ Major dependencies used in this project are...
 - [i18next](https://www.i18next.com/) for internationalization
 - [normalize.css](https://github.com/necolas/normalize.css) for consistent styling and [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for responsive loading
 - [React Router Dom](https://reactrouter.com/en/main) for navigation
+- [React Context API](https://legacy.reactjs.org/docs/context.html) for cross-component state management
+- [Font Awesome](https://fontawesome.com/) for icons
 
