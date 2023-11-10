@@ -4,7 +4,7 @@ import BigHeader from "@/components/headers/BigHeader"
 import KyotoHeroSection from "@/components/sections/HeroSection";
 import KyotoFeatureSection from "@/components/sections/FeatureSection";
 import KyotoGallerySection from "@/components/sections/GallerySection";
-import KyotoOptionsSection from "./KyotoOptionsSection";
+import KyotoOptionsSection from "./OptionsSection";
 
 import kyotoHeroImage1 from '@/assets/images/kyoto/heroImage1.jpg';
 import kyotoHeroImage2 from '@/assets/images/kyoto/heroImage2.jpg';
@@ -20,7 +20,7 @@ import kyotoGalleryImage7 from "@/assets/images/kyoto/galleryImage7.jpg";
 import kyotoGalleryImage8 from "@/assets/images/kyoto/galleryImage8.jpg";
 import kyotoGalleryVideo from "@/assets/images/kyoto/galleryVideo1.mp4";
 
-const Kyoto: React.FC = () => {
+const KyotoLandingPage: React.FC = () => {
     const { t, ready } = useTranslation();
 
     if (ready) {
@@ -70,4 +70,4 @@ const Kyoto: React.FC = () => {
     }
 };
 
-export default Kyoto;
+export default KyotoLandingPage;
