@@ -7,9 +7,11 @@ import majorCategoryImage1 from '@/assets/images/kyoto/majorCategoryImage1.jpg';
 import majorCategoryImage2 from '@/assets/images/kyoto/majorCategoryImage2.jpg';
 
 import SmallHeader from "@/components/headers/SmallHeader";
-
-import './MajorCategories.css';
 import ButtonPrimary from '@/components/buttons/ButtonPrimary';
+
+import './Categories.css';
+
+import { BookingComponentProps } from '..';
 
 interface MajorCategoriesProps {
     "id": number;
@@ -29,11 +31,12 @@ interface VariantDefinition extends Variants {
     };
 }
 
-const MajorCoursePage = () => {
+const MajorCategories: React.FC<BookingComponentProps> = ({addToBooking, apiEndpoint}) => {
     const [majorCategories, setMajorCategories] = useState<MajorCategoriesProps[]>([]);
+    const [onElementHover, setOnElementHover] = useState<boolean>(false);
 
     useEffect(() => {
-        axios.get<MajorCategoriesProps[]>('/api/majorcategories')
+        axios.get<MajorCategoriesProps[]>(`/api/${apiEndpoint}`)
         .then((response) => {
             setMajorCategories(response.data);
         })
@@ -46,24 +49,30 @@ const MajorCoursePage = () => {
     const determineBackgroundImage = (id: number) => {
         switch (id) {
             case 1:
-                return majorCategoryImage2;
-            case 2:
                 return majorCategoryImage1;
+            case 2:
+                return majorCategoryImage2;
             default:
                 return majorCategoryImage2;
         }
     };
 
+    const handleClicked = (majorCategoryId: number) => {
+        addToBooking({
+            majorCategoryId: majorCategoryId,
+            courseCategoryId: undefined
+        });
+        navigate("/kyoto/courses");
+    }
+
     const navigate: NavigateFunction = useNavigate();
 
     const variants: VariantDefinition = {
-        hidden: { opacity: 0, y: window.innerHeight },
+        hidden: { opacity: 0},
         visible: {
           opacity: 1,
-          y: 0,
           transition: {
-            y: { duration: 1 },
-            opacity: { duration: 0.5 },
+            opacity: { duration: 1 },
           },
         }
     };
@@ -73,30 +82,33 @@ const MajorCoursePage = () => {
             <>
                 <div>
                     <SmallHeader navigateTo='/kyoto'/>
-                    <div className="major-category">
-                        <div className="major-category__title">
+                    <div className="category">
+                        <div className={`category__title ${onElementHover ? 'category__title--hidden': ''}`}>
                             <h1>コースを選択して下さい</h1>
                         </div>
                         <motion.div
-                            className='major-category__content'
+                            className='category__content'
                             initial="hidden"
                             animate="visible"
                             variants={variants}
                         >
                             {majorCategories.map((majorCategory) => {
                                 return (
-                                    <>
-                                        <div className='major-category__content--element__wrapper'>
-                                            <div className='major-category__content--element'>
-                                                <img className='major-category__content--element__background' src={determineBackgroundImage(majorCategory.id)}/>
-                                                <h2>{majorCategory.name}</h2>
-                                                <p>{majorCategory.description}</p>
-                                                <div className='major-category__content--element--button__wrapper'>
-                                                    <ButtonPrimary label="選択" onClick={() => {navigate(-1)}}/>
-                                                </div>
+                                    <div
+                                        className='category__content--element__wrapper'
+                                        key={majorCategory.id}
+                                        onMouseEnter={() => {setOnElementHover(true)}}
+                                        onMouseLeave={() => {setOnElementHover(false)}}
+                                    >
+                                        <div className='category__content--element'>
+                                            <img className='category__content--element__background' src={determineBackgroundImage(majorCategory.id)}/>
+                                            <h2 className='category__content--element--title'>{majorCategory.name}</h2>
+                                            <p className='category__content--element--description'>{majorCategory.description}</p>
+                                            <div className='category__content--element--button__wrapper'>
+                                                <ButtonPrimary label="選択" onClick={() => {handleClicked(majorCategory.id)}}/>
                                             </div>
                                         </div>
-                                    </>
+                                    </div>
                                 );
                             })}
                         </motion.div>
@@ -107,4 +119,4 @@ const MajorCoursePage = () => {
     }
 }
 
-export default MajorCoursePage;
+export default MajorCategories;
