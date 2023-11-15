@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <Router>
           <Routes>
-            <Route path='/kyoto' element={<Kyoto />}/>
+            <Route path='/kyoto/*' element={<Kyoto />}/>
           </Routes>
         </Router>
       </div>

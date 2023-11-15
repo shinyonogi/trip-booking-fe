@@ -9,7 +9,11 @@ import Menu from '@/components/Menu';
 
 import './BigHeader.css';
 
-const BigHeader: React.FC = () => {
+interface BigHeaderProps {
+    navigateTo: string;
+}
+
+const BigHeader: React.FC<BigHeaderProps> = ({ navigateTo }) => {
     const navigate: NavigateFunction = useNavigate();
 
     const [menuToggled, setMenuToggled] = useState<boolean>(false);
@@ -61,7 +65,7 @@ const BigHeader: React.FC = () => {
                     <p>Made in Kyoto</p>
                 </div>
                 <div className='big-header--book-button__wrapper'>
-                    <ButtonPrimary label='BOOK NOW' onClick={() => {navigate('/')}}/>
+                    <ButtonPrimary label='BOOK NOW' onClick={() => {navigate(navigateTo)}}/>
                 </div>
             </header>
         </>

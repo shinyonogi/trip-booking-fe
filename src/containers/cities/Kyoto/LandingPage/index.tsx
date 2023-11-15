@@ -27,7 +27,7 @@ const KyotoLandingPage: React.FC = () => {
         return (
             <>
                 <div className="Kyoto">
-                    <BigHeader />
+                    <BigHeader navigateTo='/kyoto/majorcategories'/>
                     <KyotoHeroSection
                         heroCityNameJp={t('kyotoHeroTitleJP')}
                         heroCityNameEn={t('kyotoHeroTitleEN')}
