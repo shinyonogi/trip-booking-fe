@@ -40,4 +40,4 @@ Major dependencies used in this project are...
 - [React Router Dom](https://reactrouter.com/en/main) for navigation
 - [React Context API](https://legacy.reactjs.org/docs/context.html) for cross-component state management
 - [Font Awesome](https://fontawesome.com/) for icons
-
+- [Axios](https://axios-http.com/docs/intro) for communication with the server
