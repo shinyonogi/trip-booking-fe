@@ -8,6 +8,7 @@
     flex-direction: column;
 
     background-color: var(--black);
+    overflow-y: hidden;
 }
 
 .major-category__title {
@@ -75,7 +76,7 @@
 .major-category__content--element h2 {
     position: relative;
     top: -2rem;
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: 900;
     font-family: var(--font-japanese);
 
