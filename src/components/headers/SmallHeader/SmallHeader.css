@@ -1,0 +1,72 @@
+.small-header {
+    height: 12vh;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Antic Didone', serif;
+    border-bottom: 1px solid var(--black);
+}
+
+.small-header__logo {
+    width: 70%;
+    position: relative;
+    top: 0.5em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.small-header__logo h1 {
+    margin: 0;
+    font-size: 1.9em;
+}
+
+.small-header__logo p {
+    margin-top: 0.4em;
+    font-weight: 900;
+}
+
+.small-header--button {
+    width: 15%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5em;
+}
+
+.small-header--button:hover {
+    cursor: pointer;
+}
+
+.small-header--button p {
+    display: inline;
+
+    font-size: 1.3rem;
+    font-family: var(--font-main-english);
+}
+
+.small-header--button__back p {
+    position: relative;
+    left: 0.5em;
+}
+
+.small-header--button__forward p {
+    position: relative;
+    right: 0.5em;
+}
+
